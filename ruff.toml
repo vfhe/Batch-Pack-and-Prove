@@ -1,0 +1,4 @@
+[lint]
+select = ["E", "F", "W", "I", "UP", "B", "RUF"]
+# The formatter sets the line length; the data tables keep theirs.
+ignore = ["E501"]

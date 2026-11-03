@@ -1,0 +1,483 @@
+{
+  "description": "Single-threaded prover times of vfhe's range proof over Z_p (208-bit pseudo-Mersenne prime), compiled with Basefold, on Intel(R) Xeon(R) Platinum 8488C, engine _vfhe_native_avx512ifma.lib, vfhe 83a59f7. Milliseconds by ell* (log2 of the digits per range class); see measure_range.py for each series.",
+  "unit": "ms",
+  "log_sizes": [
+    20,
+    21,
+    22,
+    23,
+    24
+  ],
+  "configuration": {
+    "prime_bits": 208,
+    "prime": "411376139330301510538742295639337626245683966408394888527740929",
+    "log_n": 13,
+    "prime_bits_rq": [
+      45,
+      45,
+      45
+    ],
+    "split_degree": 4,
+    "chunks": 4,
+    "log_beta": 11,
+    "sigma": 2048,
+    "m": 15,
+    "kappa": 20,
+    "zerochecks": true,
+    "threads": 1,
+    "repeat": 1,
+    "parameters": {
+      "20": {
+        "ell": 5,
+        "ell_star": 20,
+        "b_star": 11,
+        "m": 15,
+        "main_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 12
+        },
+        "main_repetitions": 335,
+        "table_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 3
+        },
+        "table_repetitions": 315,
+        "v_code": {
+          "k0": 4,
+          "c": 4,
+          "d": 3
+        },
+        "v_repetitions": 15,
+        "v_code_from_estimator": false
+      },
+      "21": {
+        "ell": 6,
+        "ell_star": 21,
+        "b_star": 11,
+        "m": 15,
+        "main_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 13
+        },
+        "main_repetitions": 337,
+        "table_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 3
+        },
+        "table_repetitions": 315,
+        "v_code": {
+          "k0": 4,
+          "c": 4,
+          "d": 4
+        },
+        "v_repetitions": 15,
+        "v_code_from_estimator": false
+      },
+      "22": {
+        "ell": 7,
+        "ell_star": 22,
+        "b_star": 11,
+        "m": 15,
+        "main_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 14
+        },
+        "main_repetitions": 339,
+        "table_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 3
+        },
+        "table_repetitions": 315,
+        "v_code": {
+          "k0": 4,
+          "c": 4,
+          "d": 5
+        },
+        "v_repetitions": 15,
+        "v_code_from_estimator": false
+      },
+      "23": {
+        "ell": 8,
+        "ell_star": 23,
+        "b_star": 11,
+        "m": 15,
+        "main_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 15
+        },
+        "main_repetitions": 342,
+        "table_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 3
+        },
+        "table_repetitions": 315,
+        "v_code": {
+          "k0": 128,
+          "c": 4,
+          "d": 1
+        },
+        "v_repetitions": 312,
+        "v_code_from_estimator": true
+      },
+      "24": {
+        "ell": 9,
+        "ell_star": 24,
+        "b_star": 11,
+        "m": 15,
+        "main_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 16
+        },
+        "main_repetitions": 344,
+        "table_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 3
+        },
+        "table_repetitions": 315,
+        "v_code": {
+          "k0": 256,
+          "c": 4,
+          "d": 1
+        },
+        "v_repetitions": 311,
+        "v_code_from_estimator": true
+      }
+    }
+  },
+  "vfhe": {
+    "commit": "83a59f7",
+    "branch": "HEAD",
+    "dirty": false,
+    "engine": "_vfhe_native_avx512ifma.lib"
+  },
+  "machine": {
+    "python": "3.12.3",
+    "system": "Linux-7.0.0-1014-aws-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Xeon(R) Platinum 8488C",
+    "cpus": 192,
+    "memory_gib": 1511.6
+  },
+  "runs": {
+    "20": {
+      "samples": {
+        "commit_main": [
+          3321.547258
+        ],
+        "v_eval": [
+          222.627905
+        ],
+        "commit_table": [
+          3.52327
+        ],
+        "zerochecks": [
+          286.824813
+        ],
+        "virtual_eval": [
+          126.67435
+        ],
+        "eval_main": [
+          1304.72352
+        ],
+        "eval_table": [
+          63.997708
+        ],
+        "prove": [
+          5695.711969
+        ],
+        "commit": [
+          3325.070528
+        ],
+        "eval": [
+          1368.721228
+        ],
+        "digits": [
+          134.62141199999996
+        ],
+        "lookup": [
+          220.68242199999986
+        ],
+        "verify": [
+          1411.347638
+        ]
+      },
+      "max_rss_mib": 3679.15625
+    },
+    "21": {
+      "samples": {
+        "commit_main": [
+          7546.401797
+        ],
+        "v_eval": [
+          282.350201
+        ],
+        "commit_table": [
+          3.8055339999999998
+        ],
+        "zerochecks": [
+          550.2763709999999
+        ],
+        "virtual_eval": [
+          265.18417600000004
+        ],
+        "eval_main": [
+          2675.959257
+        ],
+        "eval_table": [
+          67.389719
+        ],
+        "prove": [
+          12219.361826
+        ],
+        "commit": [
+          7550.2073310000005
+        ],
+        "eval": [
+          2743.3489759999998
+        ],
+        "digits": [
+          308.594255
+        ],
+        "lookup": [
+          508.9506589999992
+        ],
+        "verify": [
+          1484.910497
+        ]
+      },
+      "max_rss_mib": 7247.78515625
+    },
+    "22": {
+      "samples": {
+        "commit_main": [
+          16382.056161
+        ],
+        "v_eval": [
+          363.81008
+        ],
+        "commit_table": [
+          3.53159
+        ],
+        "zerochecks": [
+          1055.534498
+        ],
+        "virtual_eval": [
+          596.5377900000001
+        ],
+        "eval_main": [
+          5675.287454
+        ],
+        "eval_table": [
+          71.422947
+        ],
+        "prove": [
+          25970.939474
+        ],
+        "commit": [
+          16385.587751
+        ],
+        "eval": [
+          5746.710401
+        ],
+        "digits": [
+          714.181137
+        ],
+        "lookup": [
+          1097.2598160000016
+        ],
+        "verify": [
+          1530.230983
+        ]
+      },
+      "max_rss_mib": 14350.6875
+    },
+    "23": {
+      "samples": {
+        "commit_main": [
+          34463.92301
+        ],
+        "v_eval": [
+          486.473602
+        ],
+        "commit_table": [
+          3.662852
+        ],
+        "zerochecks": [
+          2061.7450430000004
+        ],
+        "virtual_eval": [
+          1289.2851819999998
+        ],
+        "eval_main": [
+          11798.744252
+        ],
+        "eval_table": [
+          75.423869
+        ],
+        "prove": [
+          53864.561675
+        ],
+        "commit": [
+          34467.585862
+        ],
+        "eval": [
+          11874.168121
+        ],
+        "digits": [
+          1559.039627
+        ],
+        "lookup": [
+          2115.0744430000013
+        ],
+        "verify": [
+          1694.600789
+        ]
+      },
+      "max_rss_mib": 28615.53515625
+    },
+    "24": {
+      "samples": {
+        "commit_main": [
+          70051.811964
+        ],
+        "v_eval": [
+          724.767613
+        ],
+        "commit_table": [
+          3.618337
+        ],
+        "zerochecks": [
+          4094.905425
+        ],
+        "virtual_eval": [
+          2677.155473
+        ],
+        "eval_main": [
+          24358.345671
+        ],
+        "eval_table": [
+          79.312402
+        ],
+        "prove": [
+          109466.967856
+        ],
+        "commit": [
+          70055.430301
+        ],
+        "eval": [
+          24437.658073
+        ],
+        "digits": [
+          3274.302284999998
+        ],
+        "lookup": [
+          4192.079365999998
+        ],
+        "verify": [
+          1777.857424
+        ]
+      },
+      "max_rss_mib": 57032.65234375
+    }
+  },
+  "digits": {
+    "20": 134.6,
+    "21": 308.6,
+    "22": 714.2,
+    "23": 1559.0,
+    "24": 3274.3
+  },
+  "lookup": {
+    "20": 220.7,
+    "21": 509.0,
+    "22": 1097.3,
+    "23": 2115.1,
+    "24": 4192.1
+  },
+  "commit_main": {
+    "20": 3321.5,
+    "21": 7546.4,
+    "22": 16382.1,
+    "23": 34463.9,
+    "24": 70051.8
+  },
+  "commit_table": {
+    "20": 3.5,
+    "21": 3.8,
+    "22": 3.5,
+    "23": 3.7,
+    "24": 3.6
+  },
+  "commit": {
+    "20": 3325.1,
+    "21": 7550.2,
+    "22": 16385.6,
+    "23": 34467.6,
+    "24": 70055.4
+  },
+  "eval_main": {
+    "20": 1304.7,
+    "21": 2676.0,
+    "22": 5675.3,
+    "23": 11798.7,
+    "24": 24358.3
+  },
+  "eval_table": {
+    "20": 64.0,
+    "21": 67.4,
+    "22": 71.4,
+    "23": 75.4,
+    "24": 79.3
+  },
+  "eval": {
+    "20": 1368.7,
+    "21": 2743.3,
+    "22": 5746.7,
+    "23": 11874.2,
+    "24": 24437.7
+  },
+  "v_eval": {
+    "20": 222.6,
+    "21": 282.4,
+    "22": 363.8,
+    "23": 486.5,
+    "24": 724.8
+  },
+  "virtual_eval": {
+    "20": 126.7,
+    "21": 265.2,
+    "22": 596.5,
+    "23": 1289.3,
+    "24": 2677.2
+  },
+  "zerochecks": {
+    "20": 286.8,
+    "21": 550.3,
+    "22": 1055.5,
+    "23": 2061.7,
+    "24": 4094.9
+  },
+  "prove": {
+    "20": 5695.7,
+    "21": 12219.4,
+    "22": 25970.9,
+    "23": 53864.6,
+    "24": 109467.0
+  },
+  "verify": {
+    "20": 1411.3,
+    "21": 1484.9,
+    "22": 1530.2,
+    "23": 1694.6,
+    "24": 1777.9
+  }
+}
