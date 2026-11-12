@@ -41,13 +41,21 @@ prints every table as the paper prints them, from the paper's measurements
 in `microbenchmarks/`. `--microbenchmarks FILE` (a `measure.py` file) and
 `--range FILE` (a `measure_range.py` file) take other measurements.
 
-Counting the networks needs a vfhe checkout, built, on `PYTHONPATH`:
+Everything else needs vfhe at the commit the paper's numbers come from,
+`reproduce.VFHE_COMMIT`. `setup.sh` clones it into `vfhe/`, builds it, and
+creates a virtual environment in `venv/` whose Python imports it (with
+pytest). It needs git, make, a C compiler and Python 3.11 or later with its
+`venv` module and headers (Debian/Ubuntu: `build-essential python3-venv
+python3-dev`); `PYTHON=python3.12` picks the interpreter:
 
 ```bash
-export PYTHONPATH=$VFHE/build:$VFHE/build/proto:$(ls -d $VFHE/modules/*/python/src | tr '\n' ':')
-python3.12 networks.py 128 64 --log-n 6
-python3.12 -m pytest
+bash setup.sh
+venv/bin/python networks.py 128 64 --log-n 6
+venv/bin/python -m pytest
 ```
+
+A vfhe checkout of your own works too: build it with `make build` and put
+`build`, `build/proto` and each `modules/*/python/src` on `PYTHONPATH`.
 
 `networks.py` defaults to the paper's parameters (`N = 2^13`, three 45-bit
 primes, splitting degree 4, Gaussian secret with `sigma = 3.2`). The counts
@@ -67,13 +75,15 @@ and prints the tables from them:
    2^11`, `m = 15`, `kappa = 20`), compiled with Basefold, at `ell* = 20 ..
    24`.
 
-Every proof is verified. The vfhe commit the paper's numbers come from is
-`reproduce.VFHE_COMMIT`; the script stops on another commit (or on local
-changes) unless given `--any-commit`. With vfhe checked out at that commit
-and built (`make build` in the checkout, see vfhe's `docs/DEVELOPMENT.md`):
+Every proof is verified. The script stops on a vfhe commit other than
+`reproduce.VFHE_COMMIT` (or on local changes) unless given `--any-commit`.
+The files in `microbenchmarks/` record vfhe `83a59f7`, a commit with the
+same library code as `VFHE_COMMIT` (the two differ only in CI files and
+development tool versions).
+After `setup.sh`:
 
 ```bash
-python3.12 reproduce.py --vfhe $VFHE
+venv/bin/python reproduce.py --vfhe vfhe
 ```
 
 The paper's numbers were measured on an AWS `r7i.metal-48xl` (Intel Xeon
@@ -110,6 +120,7 @@ nothing.
 | `measure.py` | measures the microbenchmarks with vfhe |
 | `measure_range.py` | measures the range proof over `Z_p` with vfhe |
 | `reproduce.py` | runs every measurement, then prints the tables |
+| `setup.sh` | installs vfhe at `reproduce.VFHE_COMMIT` for the rest |
 | `basefold_parameters.py` | Basefold parameter search and proof-size estimate |
 | `tables.py` | the paper's tables, printed |
 | `circuit_sizes.py` | the circuit of Sec. 5 for a traced computation (needs vfhe) |

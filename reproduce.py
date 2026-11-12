@@ -32,7 +32,7 @@ import sys
 from pathlib import Path
 
 #: The vfhe commit the paper's numbers were measured with.
-VFHE_COMMIT = "83a59f7656f5d3256910dc644830490ae5e9279c"
+VFHE_COMMIT = "769198d74e589dd1adc1b14fb7c8ccec1b1364bd"
 
 #: ``(bits of p, sigma, m, kappa)`` of the range proof over ``Z_p``.
 RANGE_PARAMETERS = (208, 2**11, 15, 20)
